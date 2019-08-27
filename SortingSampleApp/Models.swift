@@ -26,7 +26,7 @@ struct Message {
     init(user: User) {
         date  = Randomize.randomDate()
         self.user = user
-        message = " Lorem ipsum from user \(user.name) from date \(date)"
+        message = " Lorem ipsum from user \(user.name) from date \(date)... more text here Etiam tempor orci eu lobortis elementum nibh tellus molestie. Neque egestas congue quisque egestas. Egestas integer..."
     }
 
     // Super slowly data preparation :-D first version
@@ -54,12 +54,12 @@ private final class Randomize {
         return Int(dateComponents.date?.timeIntervalSince1970 ?? Date().timeIntervalSince1970)
     }
 
-        // MARK: - Helper random functions
-        class func randomName() -> String {
+    // MARK: - Helper random functions
+    class func randomName() -> String {
         let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var name: String = ""
         let nameLength = Int.random(in: 3..<10)
-        for n in 1...nameLength {
+        for _ in 1...nameLength {
             name.append(charSet.randomElement() ?? " ")
         }
         return name
